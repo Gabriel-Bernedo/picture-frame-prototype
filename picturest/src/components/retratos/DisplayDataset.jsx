@@ -1,9 +1,13 @@
 import React from 'react'
-
-export default function DisplayDataset() {
+import Image from './Image'
+export default function DisplayDataset({data, del}) {
   return (
     <div>
-      Gallery
+      {data.map((el) => {
+        return (
+          <Image key={el.index} data={el} del={del}/>
+        )
+      })}
     </div>
   )
 }

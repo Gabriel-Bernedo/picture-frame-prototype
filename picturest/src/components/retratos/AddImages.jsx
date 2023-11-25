@@ -3,7 +3,7 @@ import { toast } from 'react-hot-toast'
 import {v4} from "uuid"
 import Image from './Image'
 
-export default function AddImages( {add, show}) 
+export default function AddImages( {add, show, addPreview}) 
 {
     const img = useRef(0)
     const [imgUrl, setImgUrl] = useState([])
@@ -48,7 +48,7 @@ export default function AddImages( {add, show})
                 <div>
                     {imgUrl.map((el)=>{
                         return (
-                            <Image key={el.id} data={el} del={deleteImage}/>
+                            <Image key={el.id} data={el} del={() => deleteImage(el.id)}/>
                         )
                     })}
                 </div>

@@ -14,3 +14,11 @@
     padding:3%;
 
 }
+
+.add-button{
+    position:absolute;
+    right:5%;
+    bottom:5%;
+    border-radius: circle;
+    padding:3%;
+}
