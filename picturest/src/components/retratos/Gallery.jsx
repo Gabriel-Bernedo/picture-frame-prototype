@@ -10,7 +10,7 @@ export default function Gallery({database}) {
     const aux = {
         data : []
     }
-  
+    
     function MostrarImagenes(event){
         var puntero = event.target.result
         if(puntero){

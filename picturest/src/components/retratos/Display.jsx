@@ -6,17 +6,22 @@ import Previsualice from './Previsualice'
 export default function Display({database}) {
 
   const [gallery, setGallery] = useState([])
+  const aux = {
+    data: []
+  }
   
-  /*
   function addImage(id){
     var transaccion = database.db.transaction(["Gallery"])
     var almacen = transaccion.objectStorage("Gallery")
 
-    var index = almacen.index("Key")
-    var rango = IDBKeyRange
-    var puntero = 
+    var rango = IDBKeyRange(index)
+    var puntero = almacen.openCursor(rango)
+    puntero.addEventListener("success", () => {
+      
+    })
+
   }
-  */
+  
 
   return (
     <div>
