@@ -6,13 +6,21 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import {Toaster} from 'react-hot-toast'
+
+
 import Navigation from './components/general/Navigation'
 import Index from './pages/Index'
-import {Toaster} from 'react-hot-toast'
+import Retratos from './pages/Retratos'
 
 const indexPage = (
   <Index/>
 )
+
+const retratosPage = (
+  <Retratos />  
+)
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -29,6 +37,10 @@ function App() {
         <Routes>
           <Route path="" element= {
             indexPage
+          } />
+
+          <Route path="/retratos" element= {
+            retratosPage
           } />
         </Routes>
       </BrowserRouter>

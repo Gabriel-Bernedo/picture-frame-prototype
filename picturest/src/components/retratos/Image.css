@@ -1,0 +1,16 @@
+.image{
+    width:100px;
+    height:100px;
+    background-size: cover;
+    position:relative;
+    display:inline-block
+}
+
+.close-button{
+    position:absolute;
+    right:5%;
+    top:5%;
+    border-radius: circle;
+    padding:3%;
+
+}
