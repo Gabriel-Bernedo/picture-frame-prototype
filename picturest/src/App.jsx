@@ -33,7 +33,9 @@ function App() {
           />
       </div>
       <BrowserRouter>
-      <Navigation />
+        <header className="header">
+          <Navigation />
+        </header>
         <Routes>
           <Route path="" element= {
             indexPage
