@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom'
 export default function Navigation() {
   return (
     <nav>
-      <Link to="/"><h1>Pincturest</h1></Link>
-      <Link to="/retratos">Retratos</Link>    
-      <hr />
+      <Link to="/"><h1 id="navt">ARCHIVOS</h1></Link>
+      <Link to="/"><h1 id="navt">EDICIÓN</h1></Link>
+      <Link to="/"><h1 id="titulo">PICTURES</h1></Link>
+      <Link to="/"><h1 id="navt">CONFIGURACIÓN</h1></Link>
+      <Link to="/"><h1 id="navt">MOD HOLOGRÁFICO</h1></Link>
     </nav>
   )
 }

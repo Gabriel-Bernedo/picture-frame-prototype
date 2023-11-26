@@ -1,41 +1,110 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+@font-face {
+  font-family: 'Hatton Bold';
+  src: local('Hatton Bold'), url('./fuentes/PP Hatton Bold 700.otf') format('opentype');
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@font-face {
+  font-family: 'Hatton Medium';
+  src: local('Hatton Medium'), url('./fuentes/PP Hatton Medium 500.otf') format('opentype');
 }
 
-body {
+@font-face {
+  font-family: 'Hatton Ultralight';
+  src: local('Hatton Ultralight'), url('./fuentes/PP Hatton Ultralight 200.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'TT Commons';
+  src: local('TT Commons'), url('./fuentes/ttCommons/TT Commons Light.otf') format('opentype');
+}
+
+*{
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+/*Sección body*/
+body {
+  background-color: #a6a6a6;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/*Sección barra de navegación*/
+nav{
+  background-color: #ededed;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /*Modificación*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0px;
+
 }
 
+/*Sección para edición de root*/
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+/*Sección para los enlaces*/
+a {
+  font-weight: 500;
+  color: #322203;
+  text-decoration: inherit;
+}
+
+/*Sección para los títulos más grandes*/
+h1 {
+  font-size: 1em;
+  line-height: 1.1;
+
+}
+
+/*Sección especificos*/
+#navt{
+  margin-right: 20px;
+}
+
+#navt, #text{
+  font-family: 'TT Commons', sans-serif;
+}
+
+#titulo{
+  font-size: 2em;
+  font-family: 'Hatton Medium', sans-serif;
+
+  /*Se agrega espacio*/
+  margin: 0 auto;
+}
+
+#cuerpoIndex {
+  margin-top: 50px; 
+}
+
+#videoDemo{
+  width: 640px;
+  height: 360px;
+}
+
+/*Sección para los botones*/
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -55,15 +124,16 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #9b711e;;
   }
   button {
-    background-color: #f9f9f9;
+    font-family: 'TT Commons', sans-serif;
+    background-color: #ededed;
   }
 }
