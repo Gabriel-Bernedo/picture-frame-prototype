@@ -6,21 +6,16 @@ import Login from '../components/general/Login'
 export default function Index() {
   return (
     <div>
-      <section>
-        <h1> Portaretratos Holografico configurable <br /> <small> Todavia en beta-testing </small></h1>
-        <p> Una propuesta innovadora para hacer portaretratos programables : mayor experiencia y mas fluidez </p>
-        <video  width="80%" controls>
-            <source src="/demo.mp4" type="video/mp4" />
+      <section id="cuerpoIndex">
+        <h1 id="titulo"> Portaretratos Holografico configurable <br /> <small> Versión beta </small></h1>
+        <p id="text"> Una propuesta innovadora para hacer portaretratos programables : mayor experiencia y mas fluidez </p>
+        <video id="videoDemo" width="80%" controls>
+          <source src="/demo.mp4" type="video/mp4" />
         </video>
       </section>
-      <hr />
       <section>
-        <figure>
-            <img src="/carrusel-canvas.png" alt="" width="70%" />
-            <figcaption> Empiece a usar su dispositivo ya !!! </figcaption>
-        </figure>
         <div>
-            <Login msg={"Ir a Retratos"}/>
+          <Login msg={"RETRATOS"}/>
         </div>
       </section>
     </div>
