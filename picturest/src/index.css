@@ -1,60 +1,12 @@
-@font-face {
-  font-family: 'Hatton Bold';
-  src: local('Hatton Bold'), url('./fuentes/PP Hatton Bold 700.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Hatton Medium';
-  src: local('Hatton Medium'), url('./fuentes/PP Hatton Medium 500.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'Hatton Ultralight';
-  src: local('Hatton Ultralight'), url('./fuentes/PP Hatton Ultralight 200.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'TT Commons';
-  src: local('TT Commons'), url('./fuentes/ttCommons/TT Commons Light.otf') format('opentype');
-}
-
 *{
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/*Sección body*/
-body {
-  background-color: #a6a6a6;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-/*Sección barra de navegación*/
-nav{
-  background-color: #ededed;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-
-  /*Modificación*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 0px;
-
-}
-
-/*Sección para edición de root*/
+/*Sección global*/
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: 'TT Commons', sans-serif;
+  font-size: 20px;
 
   color-scheme: light dark;
 
@@ -64,49 +16,8 @@ nav{
   -webkit-text-size-adjust: 100%;
 }
 
-/*Sección para los enlaces*/
-a {
-  font-weight: 500;
-  color: #322203;
-  text-decoration: inherit;
-}
-
-/*Sección para los títulos más grandes*/
-h1 {
-  font-size: 1em;
-  line-height: 1.1;
-
-}
-
-/*Sección especificos*/
-#navt{
-  margin-right: 20px;
-}
-
-#navt, #text{
-  font-family: 'TT Commons', sans-serif;
-}
-
-#titulo{
-  font-size: 2em;
-  font-family: 'Hatton Medium', sans-serif;
-
-  /*Se agrega espacio*/
-  margin: 0 auto;
-}
-
-#cuerpoIndex {
-  margin-top: 50px; 
-}
-
-#videoDemo{
-  width: 640px;
-  height: 360px;
-}
-
 /*Sección para los botones*/
 button {
-  border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
