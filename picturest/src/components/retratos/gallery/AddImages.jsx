@@ -3,7 +3,6 @@ import { toast } from 'react-hot-toast'
 import {v4} from "uuid"
 import Image from './Image'
 
-import './AddImages.css'
 export default function AddImages( {add, show, addPreview}) 
 {
     const img = useRef(0)
@@ -44,7 +43,7 @@ export default function AddImages( {add, show, addPreview})
             <input ref={img} multiple={true} type="file" id="img" onChange={previsualize}
                 style={{display: "none"}}/>
             <button className="action-button" type="button" onClick={loadImg}
-                style={{display:"inline", bottom:"5%", right:"5%"}}>
+                style={{display:"inline", top:"3%", right:"3%"}}>
                 <h2 class="bi bi-patch-plus-fill"></h2>
             </button>
         </>

@@ -5,6 +5,8 @@ import { toast } from 'react-hot-toast'
 import Display from '../components/retratos/Display'
 import Gallery from '../components/retratos/Gallery' 
 
+import './Retratos.css'
+
 const database = {
   db: undefined
 } 
@@ -173,8 +175,9 @@ export default function Retratos() {
   }
 
   return (
-    <div>
+    <div className="frame-canvas">
         <Display preview={preview} functions={DisplayFunctions}/>
+        <hr />
         <Gallery gallery={gallery} functions={GalleryFunctions}/>
     </div>
   )

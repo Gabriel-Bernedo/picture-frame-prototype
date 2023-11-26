@@ -1,0 +1,14 @@
+.action-button{
+    position:absolute;
+    padding: 15px 20px;
+    border-radius: 50%;
+}
+
+.action-button-container{
+    position:relative;
+    margin: 2rem 0rem 2rem;
+}
+
+.frame-canvas{
+    margin: 0 0 0;
+}

@@ -6,7 +6,8 @@ import Previsualice from './display/Previsualice'
 export default function Display({preview, functions}) {
 
   return (
-    <div>
+    <div className="action-button-container">
+      <h1>PROYECCION</h1>
       <DisplayDataset data={preview}/>
       <Previsualice data={preview}/>
     </div>

@@ -28,7 +28,7 @@ function App() {
     <>
       <div>
         <Toaster
-            position="bottom-center"
+            position="top-center"
             reverseOrder={false}
           />
       </div>
