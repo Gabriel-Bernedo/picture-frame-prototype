@@ -1,12 +1,15 @@
 .image{
-    width:90px;
-    height:120px;
     background-size: cover;
     position:relative;
     display:inline-block;
-    margin-top:1.5rem;
 
     box-shadow: 5px 0px 5px black;
+}
+
+.small{
+    margin-top:1.5rem;
+    width:90px;
+    height:120px;
 }
 
 .image .hover-button{

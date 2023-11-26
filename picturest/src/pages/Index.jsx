@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {toast} from 'react-hot-toast'
 
 import Login from '../components/general/Login'
 
 export default function Index() {
+
+  function greet(){
+    toast("Le damos la Bienvenida a su galería",{icon:"👋"})
+  }
+
   return (
     <div id="root2">
       <section id="cuerpoIndex">
@@ -15,7 +21,9 @@ export default function Index() {
       </section>
       <section>
         <div id="butoonPrin">
-          <Link to="/retratos"> Retratos </Link>
+          <Link to="/retratos">
+            <button type="button" onClick={greet}>Retratos</button>
+          </Link>
         </div>
       </section>
     </div>

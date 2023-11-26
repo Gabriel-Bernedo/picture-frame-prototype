@@ -84,6 +84,13 @@ export default function Retratos() {
         MostrarPreview()
     }
 
+    function ActualizarImagen(object){
+      var transaccion = database.db.transaction(["Gallery"],"readwrite")
+        var almacen = transaccion.objectStore("Gallery")
+        almacen.put(object)
+      MostrarGallery()
+    }
+
     // Preview functions
     function MostrarImagenesPreview(event){
       const puntero_1 = event.target.result
@@ -167,6 +174,7 @@ export default function Retratos() {
     Almacenar : AlmacenarImagen,
     Eliminar: EliminarImagen,
     Subir: addImagetoPreview,
+    Actualizar : ActualizarImagen,
   }
 
   const DisplayFunctions = {

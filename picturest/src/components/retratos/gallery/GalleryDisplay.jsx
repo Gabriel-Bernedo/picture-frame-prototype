@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from './Image'
-export default function GalleryDisplay({data, del, add}) {
+export default function GalleryDisplay({data, del, add, edit}) {
   return (
     <div>
       {data.map((el) => {
@@ -14,7 +14,7 @@ export default function GalleryDisplay({data, del, add}) {
                 style={{bottom:"5%", right:"5%"}}>
                 <i class="bi bi-arrow-up-circle"></i>
               </button>
-              <button className="hover-button" type="button"
+              <button className="hover-button" type="button" onClick={() => edit(el)}
                 style={{bottom:"5%", left:"5%", display:"inline"}}>
                 <i class="bi bi-pencil-fill"></i>
               </button>
