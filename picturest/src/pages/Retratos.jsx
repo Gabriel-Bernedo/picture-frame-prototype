@@ -41,7 +41,7 @@ export default function Retratos() {
         gallery : [],
         preview : []
     }
-    
+
     // Gallery functions
 
     function MostrarImagenesGallery(event){
@@ -170,7 +170,6 @@ export default function Retratos() {
   const DisplayFunctions = {
     Mostrar : MostrarPreview,
     Eliminar : removeImagetoPreview,
-
   }
 
   return (

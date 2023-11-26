@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
-import DisplayDataset from './DisplayDataset'
-import Previsualice from './Previsualice'
+import DisplayDataset from './display/DisplayDataset'
+import Previsualice from './display/Previsualice'
 
 export default function Display({preview, functions}) {
 

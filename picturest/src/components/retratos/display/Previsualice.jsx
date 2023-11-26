@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
 import {toast} from 'react-hot-toast'
-import PreviewOptions from './Previsualice/PreviewOptions'
-import PreviewDisplay from './Previsualice/PreviewDisplay'
+import PreviewOptions from '../Previsualice/PreviewOptions'
+import PreviewDisplay from '../Previsualice/PreviewDisplay'
 
 import './Previsualice.css'
 
