@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from './Image'
+import Image from '../gallery/Image'
 export default function DisplayDataset({data, del}) {
   return (
     <div>

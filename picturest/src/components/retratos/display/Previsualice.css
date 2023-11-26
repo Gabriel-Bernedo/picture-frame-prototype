@@ -22,6 +22,7 @@
     max-height: 50%;
     margin: 0; /* Elimina el margen predeterminado del cuerpo */
 }
+
 .text {
     text-align: center;
     font-family: 'Times New Roman', Times, serif; /* Fuente Times New Roman */

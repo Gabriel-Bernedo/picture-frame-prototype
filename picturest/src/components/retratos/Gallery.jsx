@@ -1,8 +1,8 @@
 import React, {useState, useRef, useEffect} from 'react'
 import { toast } from 'react-hot-toast'
 
-import GalleryDisplay from './GalleryDisplay'
-import AddImages from './AddImages'
+import GalleryDisplay from './gallery/GalleryDisplay'
+import AddImages from './gallery/AddImages'
 
 export default function Gallery({functions, gallery}) {
 

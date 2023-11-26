@@ -13,10 +13,10 @@ export default function Index() {
             <source src="/demo.mp4" type="video/mp4" />
         </video>
       </section>
-      <hr />
+      
       <section>
         <figure>
-            <img src="/carrusel-canvas.png" alt="" width="70%" />
+            
             <figcaption> Empiece a usar su dispositivo ya !!! </figcaption>
         </figure>
         <div>
