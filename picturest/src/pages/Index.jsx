@@ -5,7 +5,7 @@ import Login from '../components/general/Login'
 
 export default function Index() {
   return (
-    <div>
+    <div id="root2">
       <section id="cuerpoIndex">
         <h1 id="titulo"> Portaretratos Holografico configurable <br /> <small> Versión beta </small></h1>
         <p id="text"> Una propuesta innovadora para hacer portaretratos programables : mayor experiencia y mas fluidez </p>
@@ -14,7 +14,7 @@ export default function Index() {
         </video>
       </section>
       <section>
-        <div>
+        <div id="butoonPrin">
           <Login msg={"RETRATOS"}/>
         </div>
       </section>
