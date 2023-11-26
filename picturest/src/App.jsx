@@ -26,10 +26,14 @@ function App() {
 
   return (
     <>
+      <div>
+        <Toaster
+            position="bottom-center"
+            reverseOrder={false}
+          />
+      </div>
       <BrowserRouter>
-        <header className="header">
-          <Navigation />
-        </header>
+      <Navigation />
         <Routes>
           <Route path="" element= {
             indexPage
@@ -40,13 +44,6 @@ function App() {
           } />
         </Routes>
       </BrowserRouter>
-
-      <div>
-        <Toaster
-            position="bottom-center"
-            reverseOrder={false}
-          />
-      </div>
     </>
   )
 }
