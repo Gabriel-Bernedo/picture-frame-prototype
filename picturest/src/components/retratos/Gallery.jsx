@@ -9,7 +9,10 @@ export default function Gallery({functions, gallery}) {
 
   function updateData(object){
     toast((t) => (
-      <UpdateImage data={object} save={functions.Actualizar}
+      <UpdateImage data={object} 
+        save={functions.Actualizar} 
+        add={functions.Subir}
+        del={functions.Eliminar}
         close={() => toast.dismiss(t.id)}/>
     ), {duration: 10000})
   }
@@ -17,7 +20,7 @@ export default function Gallery({functions, gallery}) {
   return (
     <div className="action-button-container">
       <h1>GALERÍA</h1>
-      <GalleryDisplay data={gallery} del={functions.Eliminar} add={functions.Subir} edit={updateData}/>
+      <GalleryDisplay data={gallery} edit={updateData}/>
       <AddImages add={functions.Almacenar} show={functions.Mostrar} />
     </ div>
   )

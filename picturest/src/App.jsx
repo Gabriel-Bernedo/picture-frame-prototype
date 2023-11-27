@@ -12,6 +12,7 @@ import {Toaster} from 'react-hot-toast'
 import Navigation from './components/general/Navigation'
 import Index from './pages/Index'
 import Retratos from './pages/Retratos'
+import Footer from './components/general/Footer'
 
 const indexPage = (
   <Index/>
@@ -33,9 +34,7 @@ function App() {
           />
       </div>
       <BrowserRouter>
-        <header className="header">
-          <Navigation />
-        </header>
+        <Navigation />
         <Routes>
           <Route path="" element= {
             indexPage
@@ -45,6 +44,7 @@ function App() {
             retratosPage
           } />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   )
