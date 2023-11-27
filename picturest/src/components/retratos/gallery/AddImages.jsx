@@ -22,7 +22,9 @@ export default function AddImages( {add, show, addPreview})
                 res.push({
                     "id": v4(),
                     "url": reader.result,
-                    "desc" : undefined
+                    "desc" : undefined,
+                    "name" : undefined,
+                    "created": Date.now()
                 })
             })
             reader.readAsDataURL(files[i])

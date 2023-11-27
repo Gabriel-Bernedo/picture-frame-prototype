@@ -23,21 +23,25 @@ function MostrarError(event){
 }
 
 function Comenzar(event){
-    toast.success("Galería correctamente cargada")
+    toast.success("Galería cargada",{
+      position: "bottom-center"
+    })
     database.db = event.target.result
 }
 
 function CrearAlmacen(event){
     var database = event.target.result
     var almacen = database.createObjectStore("Gallery", {keyPath: "id"})
+    almacen.createIndex("created","created",{unique:false})
     var preview = database.createObjectStore("Preview", {keyPath: "id"})
-    preview.createIndex("index","index", {unique:true})
+    preview.createIndex("created","created", {unique:false})
 }
 
 export default function Retratos() {
 
+  const[ done, setDone] = useState(false)
   const [gallery, setGallery] = useState([])
-    const [preview, setPreview] = useState([])
+  const [preview, setPreview] = useState([])
     
     const aux = {
         gallery : [],
@@ -60,8 +64,8 @@ export default function Retratos() {
         aux.gallery = []
         var transaccion = database.db.transaction(["Gallery"])
         var almacen = transaccion.objectStore("Gallery")
-
-        var puntero = almacen.openCursor()
+        var indice = almacen.index("created")
+        var puntero = indice.openCursor()
         puntero.addEventListener("success", MostrarImagenesGallery)
     }
 
@@ -84,30 +88,23 @@ export default function Retratos() {
         MostrarPreview()
     }
 
+    function ActualizarImagen(object){
+      var transaccion = database.db.transaction(["Gallery"],"readwrite")
+        var almacen = transaccion.objectStore("Gallery")
+        almacen.put(object)
+      MostrarGallery()
+    }
+
+    function BuscarID(id){
+      let result = gallery.filter((e) => e.id == id)[0]
+      return result
+    }
+
     // Preview functions
     function MostrarImagenesPreview(event){
       const puntero_1 = event.target.result
       if(puntero_1){
-        var transaccion = database.db.transaction(["Gallery"])
-        var almacen = transaccion.objectStore("Gallery")
-
-        var rango = IDBKeyRange.only(puntero_1.value.id) 
-
-        var puntero_2 = almacen.openCursor(rango)
-
-        puntero_2.addEventListener("success", (event) => {
-          var puntero_3 = event.target.result
-          if(puntero_3){
-            var value = {
-              id : puntero_3.value.id,
-              url: puntero_3.value.url,
-              desc: puntero_3.value.desc,
-              index: puntero_1.value.index,
-            }
-            aux.preview.push(value)
-            setPreview([...aux.preview])
-          }
-        })
+        aux.preview.push(puntero_1.value)
         puntero_1.continue()
       } else {
         setPreview([...aux.preview])
@@ -118,60 +115,57 @@ export default function Retratos() {
         aux.preview = []
         var transaccion = database.db.transaction(["Preview"])
         var almacen = transaccion.objectStore("Preview")
-
-        var puntero = almacen.openCursor()
+        var indice = almacen.index("created")
+        var puntero = indice.openCursor()
         puntero.addEventListener("success", MostrarImagenesPreview)
     }
 
-    function addImagetoPreview(id){
-        var transaccion = database.db.transaction(["Gallery"])
-        var almacen = transaccion.objectStore("Gallery")
-
-        var rango = IDBKeyRange.only(id)
-        var puntero = almacen.openCursor(rango)
-      
-        puntero.addEventListener("success", (event) => {
-          var puntero = event.target.result
-            if(puntero){
-              var value = {
-                index: preview.length + 1,
-                id: puntero.value.id
-              }
-
-              var transaccion = database.db.transaction(["Preview"],"readwrite")
-              var almacen = transaccion.objectStore("Preview")
-              almacen.add(value)
-              MostrarPreview()
-            }
-        })
-        
-    }
-
-    function removeImagetoPreview(index){
-      var transaccion = database.db.transaction(["Preview"],"readwrite")
+    function addImagetoPreview(object){
+        var transaccion = database.db.transaction(["Preview"],"readwrite")
         var almacen = transaccion.objectStore("Preview")
-        
-        var solicitud = almacen.delete(index)
+        const value = {
+          id: object.id,
+          created: Date.now()
+        }
+        almacen.add(value)
         MostrarPreview()
+        toast.success("Imagen cargada a Proyeccion",{position: "bottom-center"})
+    }
+
+    function removeImagetoPreview(id){
+      var transaccion = database.db.transaction(["Preview"],"readwrite")
+      var almacen = transaccion.objectStore("Preview")
+      
+      var solicitud = almacen.delete(id)
+      MostrarPreview()
     }
 
 
-  if(!database.db) {
+  if(!done) {
     IniciarDB()
-    setTimeout(MostrarGallery, 1000)
-    setTimeout(MostrarPreview, 1000)
+    setTimeout(() => {
+      MostrarGallery()
+      MostrarPreview()
+      toast.success("Imagenes cargadas", {
+        position:"bottom-center"
+      })
+    }, 1000)
+    setDone(true)
   }
+  
 
   const GalleryFunctions = {
     Mostrar : MostrarGallery,
     Almacenar : AlmacenarImagen,
     Eliminar: EliminarImagen,
     Subir: addImagetoPreview,
+    Actualizar : ActualizarImagen,
   }
 
   const DisplayFunctions = {
     Mostrar : MostrarPreview,
     Eliminar : removeImagetoPreview,
+    Buscar: BuscarID,
   }
 
   return (

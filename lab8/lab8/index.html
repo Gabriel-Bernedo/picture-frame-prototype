@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <title>Portaretratos digital</title>
   <link rel="stylesheet" href="estilo.css">
 </head>
-<body> 
-    <h1 class="dsads">Portaretratos digital</h1>
+<body>
+    <h1 style="text-align: center;">Portaretratos digital</h1>
+    <center><img src="https://www.purdue.edu/discoverypark/arequipa-nexus/images/unsa.png" style="max-width: 80%;height: auto;"></center>
+    <br>
     <div class="botones">
         <img src="img/temp.png" onclick="temp()"  class="icon">
         <img src="img/anterior.png" onclick="prev()"  class="icon"> 
         <img src="img/sig.png" onclick="sig()"  class="icon">
-        <div id="pausa"><img src="img/pausa.png" onclick="pausa()"  class="icon" ></div>
-        
+        <img src="img/pausa.png" onclick="pausa()" class="icon"  id="pausa">
     </div>
-    <br><br>
-    <div id="info" ></div>
-    <br><br>
+    <br>
+    <div id="info" style="text-align: left;"></div>
+    <br>
     <div id="img" class="retrato"></div>
+    <br><br>
+    <center><div id="like"><img src="img/like.png" onclick="darLike(0)" class="icon"></div></center>
     <script src="script.js"></script>
 </body>
 </html>
