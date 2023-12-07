@@ -8,9 +8,7 @@ export default function Navigation() {
       {(screen.width >= 900) ? 
         <nav>
           <Link to="/" className="additional-button"><h1 id="navt1">CONFIGURACIÓN</h1></Link>
-          <Link to="/retratos" className="additional-button" ><h1 id="navt1">ARCHIVOS</h1></Link>
           <Link to="/" className="center"><h1 id="titulo">PICTURES</h1></Link>
-          <Link to="/" className="additional-button"><h1 id="navt2">EDICIÓN</h1></Link>
           <Link to="/" className="additional-button"><h1 id="navt2">MOD HOLOGRÁFICO</h1></Link>
         </nav>
        :

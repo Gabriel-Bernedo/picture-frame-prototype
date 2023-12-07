@@ -13,7 +13,7 @@ export default function Previsualice({data, select}) {
 
         </Preview>
       ) ,
-      {duration: Infinity}
+      {duration: (data == []) ? Infinity : 2000}
     )
   }
   
