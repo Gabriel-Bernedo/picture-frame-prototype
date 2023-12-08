@@ -85,6 +85,10 @@ h1 {
   }
 }
 
+#videoDemo{
+  border: 5px solid black;
+}
+
 @media(max-width:840px){
   .additional-button{
     display:none;

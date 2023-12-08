@@ -7,14 +7,29 @@ import UpdateImage from './gallery/UpdateImage'
 
 export default function Gallery({functions, gallery}) {
 
+  const EditionPanel = {
+    panel: undefined,
+    available: true,
+  }
   function updateData(object){
-    toast((t) => (
-      <UpdateImage data={object} 
-        save={functions.Actualizar} 
-        add={functions.Subir}
-        del={functions.Eliminar}
-        close={() => toast.dismiss(t.id)}/>
-    ), {duration: 10000})
+    if(EditionPanel.available){
+      EditionPanel.available = false
+      if(EditionPanel.panel){
+        toast.dismiss(EditionPanel.panel.id)
+      }
+      toast((t) => {
+        EditionPanel.panel = t
+        EditionPanel.available = true
+        return (
+          <UpdateImage data={object} 
+            save={functions.Actualizar} 
+            add={functions.Subir}
+            del={functions.Eliminar}
+            close={() => toast.dismiss(t.id)}/>
+        )
+      }, {duration: Infinity})
+    }
+    
   }
 
   return (

@@ -22,7 +22,7 @@ export default function UpdateImage({data, save, close, del, add}) {
         })
         toast.success("Data Actualizada", {
             position: "top-right",
-            duration: 2000
+            duration: 1000
         })
         close()
     }
@@ -73,7 +73,10 @@ export default function UpdateImage({data, save, close, del, add}) {
             style={{left:"3.5rem", top:"95%"}}>
             <i class="bi bi-trash-fill"></i>
         </button>
-        <button className="action-button" type="button" onClick={() => add(data)}
+        <button className="action-button" type="button" onClick={() => {
+            UpdateImage()
+            add(data)
+        }}
             style={{right:"3.5rem", top:"95%"}}>
             <i class="bi bi-image"></i>
         </button>
