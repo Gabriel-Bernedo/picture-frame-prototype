@@ -25,6 +25,11 @@ export default function Index() {
             <button type="button" onClick={greet}>Retratos</button>
           </Link>
         </div>
+        <div id="butoonPrin">
+          <Link to="https://forms.gle/1qYE2HB15QxK5mi87">
+            <button type="button">Calificanos !!!</button>
+          </Link>
+        </div>
       </section>
     </div>
   )
