@@ -6,7 +6,7 @@ Considerando un hipotetico portaretratos holografico, se tiene en cuenta diseña
 
 ## ¿ Que usa este proyecto ?
 
-Este proyecto se desarrollo con React.js, un framework de front-end y tambien usa Vite.js para hacer el despliegue del servidor
+Este proyecto se desarrollo con React.js, una libreria de js que acelera el desarrollo front-end y tambien usa Vite.js para hacer el despliegue del servidor
 
 ## ¿ Como usar este prototipo ?
 
