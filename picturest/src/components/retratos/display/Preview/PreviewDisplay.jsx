@@ -1,13 +1,24 @@
 import React from 'react'
 import {toast} from 'react-hot-toast'
+
+/*
+   {(data.name) ? 
+            <h2 className="image-information">
+              {data.name}
+            </h2>
+          : ""}
+*/
+
 export default function PreviewDisplay({data}) {
   return (
       <div>
         <div className="preview-image-canvas" >
-          <div className="preview-image" title={data.name} 
+          
+          <div className="preview-image" 
             style={{backgroundImage : `url(${data.url})`}}>
           </div>
         </div>
+       
         {(data.desc) ?
           <div className="image-information">
             {data.desc}

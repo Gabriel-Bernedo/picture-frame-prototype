@@ -5,7 +5,7 @@ import {toast} from 'react-hot-toast'
 import Preview from './Preview'
 
 export default function Previsualice({data, select}) {
-
+  alert(data == true)
   function showPreview(){
     toast((t) => 
       (
@@ -13,7 +13,7 @@ export default function Previsualice({data, select}) {
 
         </Preview>
       ) ,
-      {duration: (data == []) ? Infinity : 2000}
+      {duration: (data == true) ? Infinity : 2000}
     )
   }
   
