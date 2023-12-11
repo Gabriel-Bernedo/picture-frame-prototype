@@ -5,7 +5,6 @@ import {toast} from 'react-hot-toast'
 import Preview from './Preview'
 
 export default function Previsualice({data, select}) {
-  alert(data == true)
   function showPreview(){
     toast((t) => 
       (

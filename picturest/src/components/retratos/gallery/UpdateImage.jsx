@@ -22,7 +22,7 @@ export default function UpdateImage({data, save, close, del, add}) {
         })
         toast.success("Data Actualizada", {
             position: "top-right",
-            duration: 1000
+            duration: 500
         })
         close()
     }
